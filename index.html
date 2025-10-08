@@ -26,7 +26,35 @@
 </head>
 
 <body>
-<h1>Testing</h1>
+<!--Header-->
+<div class="w-full lg:h-[91px] h-full bg-[#15803D] navbar lg:py-[24px] lg:px-[135px]">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-green-600 rounded-box z-1 mt-[15px] w-48 p-2 text-white">
+        <li class=""><a href="" class="font-[500] hover-drop">About</a></li>
+        <li><a href="" class="font-[500] hover-drop">Gallery</a></li>
+        <li><a href="" class="font-[500] hover-drop">Plant a Tree</a></li>
+      </ul>
+    </div>
+    <a class="text-[18px] md:text-[25px] lg:text-[35px] text-white font-bold">&#127795;Green Earth</a>
+  </div>
+  <div class="navbar-center hidden lg:flex text-white">
+    <ul class="menu menu-horizontal px-1 md:text-[16px] lg:text-[18px]">
+      <li><a href="" class="font-[500] hover-nav">About</a></li>
+      <li><a href="" class="font-[500] hover-nav">Gallery</a></li>
+      <li><a href="" class="font-[500] hover-nav">Plant a Tree</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <a class="btn bg-[#facc15] font-[500] text-[16px] lg:text-[18px] text-[#15803D] border-0 rounded-3xl shadow-[#cff0dc] hover-plant"><span class="hidden lg:block">&#127793;</span>Plant a Tree</a>
+  </div>
+</div>
+
 <!--Script Link-->
 <script src="./Scripts/script1.js"></script>
 </body>
