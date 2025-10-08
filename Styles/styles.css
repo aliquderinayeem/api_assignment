@@ -20,7 +20,7 @@
   font-size: 16.4px;
 }
 
-@media (min-width: 839px) {
+@media (min-width: 800px) {
   .hover-plant:hover {
     background-color: #ffffff;
     color: rgb(20, 160, 20);
