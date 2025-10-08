@@ -1,8 +1,8 @@
-.inter {
+.inter{
   font-family: "Inter", sans-serif;
 }
 
-.geist {
+.geist{
   font-family: "Geist", sans-serif;
 }
 
@@ -20,7 +20,7 @@
   font-size: 16.4px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 839px) {
   .hover-plant:hover {
     background-color: #ffffff;
     color: rgb(20, 160, 20);
