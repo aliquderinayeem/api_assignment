@@ -13,7 +13,8 @@ displayNavLeft = (categories) => {
         const child = document.createElement("div");
         child.innerHTML = `<button onclick="displayHover(${category.id})" class="navClass" id="${category.id}">${category.category_name}</button>`;
         child.classList.add('left-nav', 'w-full', 'navClass');
-        containerNavLeft.appendChild(child)
+        containerNavLeft.appendChild(child);
+        child.classList.add("hover")
     })
 };
 //Load All data
@@ -50,7 +51,7 @@ const displayCards=(plants)=>{
         <div class="text-[14px] sm:text-[15px] lg:text-[16px] font-[700] leading-[18px] sm:leading-[19px] lg:leading-[20px]"><i class="fa-solid fa-dollar-sign"></i>${plant.price}</div>
       </div>
       <div class="mt-[10px] sm:mt-[12px]">
-      <button class="w-full flex justify-center items-center bg-[#15803d] text-white rounded-[9999px] py-[10px] sm:py-[12px] px-[16px] sm:px-[20px] text-[14px] sm:text-[15px] lg:text-[16px] font-[500] leading-none hover cart">Add to Cart</button>
+      <button class="w-full flex justify-center items-center bg-[#15803d] text-white rounded-[9999px] py-[10px] sm:py-[12px] px-[16px] sm:px-[20px] text-[14px] sm:text-[15px] lg:text-[16px] font-[500] leading-none hover cart" id="cartbutton" onclick="cartadded('${plant.name}','${plant.price}')">Add to Cart</button>
       </div>
     </div>
     `
@@ -89,7 +90,7 @@ const displayHover= (id) => {
         <div class="text-[14px] sm:text-[15px] lg:text-[16px] font-[700] leading-[18px] sm:leading-[19px] lg:leading-[20px]"><i class="fa-solid fa-dollar-sign"></i>${d.price}</div>
       </div>
       <div class="mt-[10px] sm:mt-[12px]">
-      <button class="w-full flex justify-center items-center bg-[#15803d] text-white rounded-[9999px] py-[10px] sm:py-[12px] px-[16px] sm:px-[20px] text-[14px] sm:text-[15px] lg:text-[16px] font-[500] leading-none hover cart">Add to Cart</button>
+      <button class="w-full flex justify-center items-center bg-[#15803d] text-white rounded-[9999px] py-[10px] sm:py-[12px] px-[16px] sm:px-[20px] text-[14px] sm:text-[15px] lg:text-[16px] font-[500] leading-none hover cart" id="cartbutton" onclick="cartadded('${d.price}','${d.name}')">Add to Cart</button>
       </div>
     </div>
             `
@@ -105,22 +106,51 @@ loadAllData();
 
 
 //Add to cart
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.cart');
-  // handle add-to-cart logic here
-  const totalContainer=document.getElementById("cartContainer");
-  const child=document.createElement("div");
+// const CONTAINER=document.getElementById("cartbutton");
+// console.log(CONTAINER)
+const cartadded=(price,name)=>{
+    const totalContainer=document.getElementById("cartContainer");
+    const child=document.createElement("div");
     child.innerHTML=`
         <div class="flex justify-between py-[6px] sm:py-[8px] px-[10px] sm:px-[12px] bg-[#f0fdf4] rounded-[6px] sm:rounded-[8px]">
         <div>
-        <h1 class="text-[14px] sm:text-[15px] font-[600] leading-[18px] sm:leading-[20px]">Mango Tree</h1>
-        <p class="text-[14px] sm:text-[16px] font-[700] text-[#808080]"><i class="fa-solid fa-dollar-sign"></i>500&times;1</p>
+        <h1 class="text-[14px] sm:text-[15px] font-[600] leading-[18px] sm:leading-[20px]">${name}</h1>
+        <p class="text-[14px] sm:text-[16px] font-[700] text-[#808080]"><i class="fa-solid fa-dollar-sign"></i>${price}&times;1</p>
         </div>
         <div class="flex items-center">
           <i class="fa-solid fa-xmark text-red-600"></i>
         </div>
         </div>
     `
-  console.log(child)
   totalContainer.append(child);
-});
+};
+
+//FAILED ATTEMPT
+
+
+
+
+
+
+
+
+
+// document.getElementById("cartbutton").addEventListener('click', (e) => {
+//   const totalContainer=document.getElementById("cartContainer");
+//   const btn = e.target.closest('.cart');
+//   // handle add-to-cart logic here
+//   const child=document.createElement("div");
+//     child.innerHTML=`
+//         <div class="flex justify-between py-[6px] sm:py-[8px] px-[10px] sm:px-[12px] bg-[#f0fdf4] rounded-[6px] sm:rounded-[8px]">
+//         <div>
+//         <h1 class="text-[14px] sm:text-[15px] font-[600] leading-[18px] sm:leading-[20px]">Mango Tree</h1>
+//         <p class="text-[14px] sm:text-[16px] font-[700] text-[#808080]"><i class="fa-solid fa-dollar-sign"></i>500&times;1</p>
+//         </div>
+//         <div class="flex items-center">
+//           <i class="fa-solid fa-xmark text-red-600"></i>
+//         </div>
+//         </div>
+//     `
+//   console.log(child)
+//   totalContainer.append(child);
+// });
