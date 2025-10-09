@@ -60,3 +60,9 @@
   background-color:#15803d ;
   color:white;
 }
+.hover:hover{
+  background-color: rgb(216, 216, 216);
+  color:black;
+  text-transform: capitalize;
+  text-shadow: #cff0dc;
+}
