@@ -105,3 +105,22 @@ loadAllData();
 
 
 //Add to cart
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.cart');
+  // handle add-to-cart logic here
+  const totalContainer=document.getElementById("cartContainer");
+  const child=document.createElement("div");
+    child.innerHTML=`
+        <div class="flex justify-between py-[6px] sm:py-[8px] px-[10px] sm:px-[12px] bg-[#f0fdf4] rounded-[6px] sm:rounded-[8px]">
+        <div>
+        <h1 class="text-[14px] sm:text-[15px] font-[600] leading-[18px] sm:leading-[20px]">Mango Tree</h1>
+        <p class="text-[14px] sm:text-[16px] font-[700] text-[#808080]"><i class="fa-solid fa-dollar-sign"></i>500&times;1</p>
+        </div>
+        <div class="flex items-center">
+          <i class="fa-solid fa-xmark text-red-600"></i>
+        </div>
+        </div>
+    `
+  console.log(child)
+  totalContainer.append(child);
+});
