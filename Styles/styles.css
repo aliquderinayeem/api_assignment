@@ -1,8 +1,8 @@
-.inter{
+.inter {
   font-family: "Inter", sans-serif;
 }
 
-.geist{
+.geist {
   font-family: "Geist", sans-serif;
 }
 
@@ -29,8 +29,31 @@
   }
 }
 
-.hover-drop:hover{
+.hover-drop:hover {
   background-color: #9fe099;
   color: rgb(20, 160, 20);
   font-weight: bold;
+}
+
+.left-nav {
+  /*sizing*/
+  padding: 8px 10px 8px 10px;
+  /*text formatting*/
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid yellow;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0%;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .left-nav {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
 }
