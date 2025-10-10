@@ -11,7 +11,7 @@ body{
   color: green;
   font-size: 19.5px;
   border-radius: 60px;
-  transition-duration: 2s;
+  transition-duration: 1s;
 }
 
 .hover-plant:hover {
@@ -19,7 +19,7 @@ body{
   color: rgb(20, 160, 20);
   font-weight: bold;
   font-size: 16.4px;
-  transition-duration: 2s;
+  transition-duration: 1s;
 }
 
 @media (min-width: 800px) {
@@ -28,7 +28,7 @@ body{
     color: rgb(20, 160, 20);
     font-weight: bold;
     font-size: 20px;
-    transition-duration: 2s;
+    transition-duration: 1s;
   }
 }
 
@@ -36,7 +36,7 @@ body{
   background-color: #9fe099;
   color: rgb(20, 160, 20);
   font-weight: bold;
-  transition-duration: 2s;
+  transition-duration: 1s;
 }
 
 .left-nav {
@@ -70,7 +70,7 @@ body{
   text-transform: capitalize;
   text-shadow: #cff0dc;
   font-weight: bolder;
-  transition-duration: 2s;
+  transition-duration: 1s;
 }
 .none{
   display:none;
