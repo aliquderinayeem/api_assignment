@@ -206,7 +206,7 @@ const thanks=()=>{
 let totalMoney=document.getElementById("total_Money");
 let total=parseInt(totalMoney.innerText);
 const cartadded=(price,name)=>{
-    alert(`Added ${name} to Cart\nPrice is ${price}`)
+    
     const totalContainer=document.getElementById("cartContainer");
     const child=document.createElement("div");
     child.innerHTML=`
@@ -226,6 +226,7 @@ const cartadded=(price,name)=>{
   total=total+E_Price;
   totalMoney.innerText=total.toString();
   totalContainer.append(child);
+  alert(`Added ${name} to Cart\nPrice is ${price}`)
 };
 
 const deleted=(button,price)=>{
