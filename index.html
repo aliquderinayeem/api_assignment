@@ -83,7 +83,7 @@ generations.</p>
     </div>
   </div>
   <!--Middle part[Card Section]-->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[7px] sm:gap-[10px] lg:gap-[30px]" id="cardContainer">
+  <div class="grid grid-cols-1 min-[740px]:grid-cols-2 lg:grid-cols-3 gap-[7px] sm:gap-[10px] lg:gap-[30px]" id="cardContainer">
   
   </div>
   <!--Right Side[Maintenance Section]-->
@@ -100,13 +100,35 @@ generations.</p>
         <h1>Total:</h1>
       </div>
       <div class="text-[14px] sm:text-[16px] font-[500]">
-        <i class="fa-solid fa-dollar-sign"></i>1000
+        <i class="fa-solid fa-dollar-sign"></i><span id="total_Money">0</span>
       </div>
     </div>
   </div>
   </div>
 </div>
 </div>
+
+
+
+
+
+
+<!--Modal Part-->
+<!-- Open the modal using ID.showModal() method -->
+
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div  id="modal-container">
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn border-none text-[30px]"><i class="fa-solid fa-xmark text-red-600"></i></button>
+      </form>
+    </div>
+  </div>
+</dialog>
 <!--Script Link-->
 <script src="./Scripts/script1.js"></script>
 </body>

@@ -44,17 +44,18 @@ const displayCards=(plants)=>{
       <div>
         <img src="${plant.image}" alt="${plant.name}" class="rounded-[8px] sm:rounded-[10px] max-h-[220px] max-w-[390px] md:max-w-[176.031px] md:max-h-[117.344px] lg:max-w-[366.328px] lg:max-h-[244.219px] w-full h-full object-cover">
       </div>
-      <h1 class="text-[14px] sm:text-[15px] lg:text-[16px] font-[600] leading-[18px] sm:leading-[19px] lg:leading-[20px] mt-[10px] sm:mt-[12px]">${plant.name}</h1>
+      <h1 onclick="my_modal_5.showModal();details('${plant.image}','${plant.name}','${plant.description}','${plant.category}','${plant.price}')" class="text-[14px] sm:text-[15px] lg:text-[16px] font-[600] leading-[18px] sm:leading-[19px] lg:leading-[20px] mt-[10px] sm:mt-[12px]">${plant.name}</h1>
       <p class="text-[11px] sm:text-[12px] font-[400] leading-[15px] sm:leading-[16px] line-clamp-2 inter mt-[6px] sm:mt-[8px]">${plant.description}</p>
       <div class="flex flex-row justify-between mt-[6px] sm:mt-[8px] items-center">
         <div class="px-[10px] sm:px-[12px] py-[3px] sm:py-[4px] rounded-full font-[600] text-[12px] sm:text-[14px] lg:text-[15px] bg-[#DCFCE7] text-[#15803D]">${plant.category}</div>
         <div class="text-[14px] sm:text-[15px] lg:text-[16px] font-[700] leading-[18px] sm:leading-[19px] lg:leading-[20px]"><i class="fa-solid fa-dollar-sign"></i>${plant.price}</div>
       </div>
       <div class="mt-[10px] sm:mt-[12px]">
-      <button class="w-full flex justify-center items-center bg-[#15803d] text-white rounded-[9999px] py-[10px] sm:py-[12px] px-[16px] sm:px-[20px] text-[14px] sm:text-[15px] lg:text-[16px] font-[500] leading-none hover cart" id="cartbutton" onclick="cartadded('${plant.name}','${plant.price}')">Add to Cart</button>
+      <button class="w-full flex justify-center items-center bg-[#15803d] text-white rounded-[9999px] py-[10px] sm:py-[12px] px-[16px] sm:px-[20px] text-[14px] sm:text-[15px] lg:text-[16px] font-[500] leading-none hover cart" id="cartbutton" onclick="cartadded('${plant.price}','${plant.name}')">Add to Cart</button>
       </div>
     </div>
     `
+    
     container.append(child);
     })
 };
@@ -83,7 +84,7 @@ const displayHover= (id) => {
       <div>
         <img src="${d.image}" alt="${d.name}" class="rounded-[8px] sm:rounded-[10px] max-h-[220px] max-w-[390px] md:max-w-[176.031px] md:max-h-[117.344px] lg:max-w-[366.328px] lg:max-h-[244.219px] w-full h-full object-cover">
       </div>
-      <h1 class="text-[14px] sm:text-[15px] lg:text-[16px] font-[600] leading-[18px] sm:leading-[19px] lg:leading-[20px] mt-[10px] sm:mt-[12px]">${d.name}</h1>
+      <h1 onclick="my_modal_5.showModal();details('${d.image}','${d.name}','${d.description}','${d.category}','${d.price}')" class="text-[14px] sm:text-[15px] lg:text-[16px] font-[600] leading-[18px] sm:leading-[19px] lg:leading-[20px] mt-[10px] sm:mt-[12px]">${d.name}</h1>
       <p class="text-[11px] sm:text-[12px] font-[400] leading-[15px] sm:leading-[16px] line-clamp-2 inter mt-[6px] sm:mt-[8px]">${d.description}</p>
       <div class="flex flex-row justify-between mt-[6px] sm:mt-[8px] items-center">
         <div class="px-[10px] sm:px-[12px] py-[3px] sm:py-[4px] rounded-full font-[600] text-[12px] sm:text-[14px] lg:text-[15px] bg-[#DCFCE7] text-[#15803D]">${d.category}</div>
@@ -105,10 +106,57 @@ loadLeftNav();
 loadAllData();
 
 
+//Modal Part
+const details=(image,name,des,cat,price)=>{
+console.log(image)
+console.log(name)
+console.log(des)
+console.log(cat)
+console.log(price)
+const container=document.getElementById("modal-container")
+container.innerHTML=""
+const child=document.createElement("div")
+child.innerHTML=`
+    <div class="p-[12px] sm:p-[14px] lg:p-[16px] rounded-[8px] sm:rounded-[10px] bg-white">
+      <div>
+        <img src="${image}" alt="${name}" class="rounded-[8px] sm:rounded-[10px] w-full h-full object-cover">
+      </div>
+      <h1 class="text-[20px] sm:text-[30px] lg:text-[35px] font-[800] leading-[25px] sm:leading-[30px] lg:leading-[40px] mt-[16px] sm:mt-[20px]">${name}</h1>
+      <p class="text-[20px] sm:text-[25px] font-[400] leading-[25px] sm:leading-[30px] inter mt-[10px] sm:mt-[16px]">${des}</p>
+      <div class="flex flex-col justify-between mt-[10px] sm:mt-[16px]">
+        <div class="font-[700] text-[18px] sm:text-[20px] lg:text-[25px] text-[#15803D]">${cat}</div>
+        <div class="text-[18px] sm:text-[20px] lg:text-[25px] font-[700] leading-[18px] sm:leading-[19px] lg:leading-[20px]">Price:<i class="fa-solid fa-dollar-sign"></i>${price}</div>
+      </div>
+
+    </div>
+`
+container.append(child)
+};
+
+
+
+
+
+
 //Add to cart
 // const CONTAINER=document.getElementById("cartbutton");
 // console.log(CONTAINER)
+
+
+// ATTENTION BELOW------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// let totalMoney=document.getElementById("total_Money").innerText;
+//Why this is not valid???
+//As no one is the container now...............totaLMoney is just innerText now
+
+
+
+
+
+let totalMoney=document.getElementById("total_Money");
+let total=parseInt(totalMoney.innerText);
 const cartadded=(price,name)=>{
+    
     const totalContainer=document.getElementById("cartContainer");
     const child=document.createElement("div");
     child.innerHTML=`
@@ -118,12 +166,28 @@ const cartadded=(price,name)=>{
         <p class="text-[14px] sm:text-[16px] font-[700] text-[#808080]"><i class="fa-solid fa-dollar-sign"></i>${price}&times;1</p>
         </div>
         <div class="flex items-center">
+        <button onclick="deleted(this,${price})">
           <i class="fa-solid fa-xmark text-red-600"></i>
+        </button>
         </div>
         </div>
-    `
+    `;
+  const E_Price=parseInt(price);
+  total=total+E_Price;
+  totalMoney.innerText=total.toString();
   totalContainer.append(child);
 };
+
+const deleted=(button,price)=>{
+  const parent=button.parentNode.parentNode.parentNode;
+  parent.classList.add("none");
+  total-=price;
+  totalMoney.innerText=total.toString();
+}
+
+
+
+
 
 //FAILED ATTEMPT
 

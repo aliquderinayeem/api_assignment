@@ -66,3 +66,6 @@
   text-transform: capitalize;
   text-shadow: #cff0dc;
 }
+.none{
+  display:none;
+}
