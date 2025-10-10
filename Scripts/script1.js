@@ -108,13 +108,9 @@ loadAllData();
 
 //Modal Part
 const details=(image,name,des,cat,price)=>{
-console.log(image)
-console.log(name)
-console.log(des)
-console.log(cat)
-console.log(price)
 const container=document.getElementById("modal-container")
-container.innerHTML=""
+container.innerHTML="";
+container.className=""
 const child=document.createElement("div")
 child.innerHTML=`
     <div class="p-[12px] sm:p-[14px] lg:p-[16px] rounded-[8px] sm:rounded-[10px] bg-white">
@@ -154,7 +150,34 @@ const gallery=()=>{
 }
 
 
+const thanks=()=>{
+  // console.log("hello")
+  const personContainer=document.getElementById("name");
+  const person=personContainer.value;
+  const NContainer=document.getElementById("no");
+  const no=NContainer.value;
+  if(!person||!no){
+  const Mcontainer=document.getElementById("modal-container");
+  Mcontainer.innerHTML="";
+  const elC=document.createElement("div")
+  elC.innerHTML=`
+ <h1 class="text-[40px] font-[900] text-red-500">Enter Your Name and no.of Trees</h1>
+  `
+  Mcontainer.append(elC);
 
+    return;
+  }
+  const Mcontainer=document.getElementById("modal-container");
+  Mcontainer.innerHTML="";
+  Mcontainer.parentNode.classList.add("last")
+  const elC=document.createElement("div")
+  elC.innerHTML=`
+<h1 class="text-[60px] font-[900] bg-gradient-to-r from-red-500 via-orange-300 to-yellow-500 bg-clip-text text-transparent">${person}</h1><!--New Learning-->
+<p class="text-[30px] font-[900] bg-gradient-to-r from-black via-red-600 to-gray-400 bg-clip-text text-transparent text-center">Planted</p>
+<p class="text-[50px] font-[900] bg-gradient-to-l from-green-900  via-yellow-200 to-green-950 bg-clip-text text-transparent text-right">${no} Trees</p>
+  `
+  Mcontainer.append(elC);
+}
 
 //Add to cart
 // const CONTAINER=document.getElementById("cartbutton");
