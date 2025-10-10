@@ -23,6 +23,7 @@
     rel="stylesheet">
   <!--StyleSheet Link-->
   <link rel="stylesheet" href="./Styles/styles.css">
+  <link rel="icon" href="./B12A06-Green-Earth/assets/WhatsApp Image 2025-10-09 at 8.46.05 AM.jpeg">
 </head>
 
 <body>
@@ -40,21 +41,21 @@
           <li><a href="" class="font-[500] hover-drop inter">About</a></li>
           <li><button class="font-[500] hover-drop inter" onclick="gallery();my_modal_5.showModal()">Gallery</button>
           </li>
-          <li><a href="" class="font-[500] hover-drop inter">Plant a Tree</a></li>
+          <li><a href="#bottoma" class="font-[500] hover-drop inter">Plant a Tree</a></li>
         </ul>
       </div>
-      <a class="text-[18.5px] md:text-[25px] lg:text-[35px] text-white font-bold inter">&#127795;Green Earth</a>
+      <a class="text-[18.5px] md:text-[25px] lg:text-[35px] text-white font-bold inter" href="/">&#127795;Green Earth</a>
     </div>
     <div class="navbar-center hidden lg:flex text-white">
       <ul class="menu menu-horizontal px-1 md:text-[16px] lg:text-[18px]">
-        <li><a href="" class="font-[500] hover-nav inter">About</a></li>
+        <li><a href="#abouta" class="font-[500] hover-nav inter">About</a></li>
         <li><button class="font-[500] hover-nav inter" onclick="gallery();my_modal_5.showModal()">Gallery</button></li>
-        <li><a href="" class="font-[500] hover-nav inter">Plant a Tree</a></li>
+        <li><a href="#bottoma" class="font-[500] hover-nav inter">Plant a Tree</a></li>
       </ul>
     </div>
     <div class="navbar-end">
       <a
-        class="btn bg-[#facc15] font-[700] text-[15px] md:text-[18px] lg:text-[18px] text-[#15803D] border-0 rounded-3xl shadow-[#cff0dc] hover-plant inter"><span
+        class="btn bg-[#facc15] font-[700] text-[15px] md:text-[18px] lg:text-[18px] text-[#15803D] border-0 rounded-3xl shadow-[#cff0dc] hover-plant inter" href="#bottoma"><span
           class="hidden lg:block">&#127793;</span>Plant a Tree</a>
     </div>
   </div>
@@ -73,7 +74,7 @@
         Join our mission to plant 1 million trees and make the Earth greener for future
         generations.</p>
       <a
-        class="btn bg-[#facc15] font-[700] text-[15px] md:text-[18px] lg:text-[18px] text-[#15803D] border-0 rounded-3xl shadow-[#cff0dc] hover-plant inter mt-[24px] text-center"><span
+        class="btn bg-[#facc15] font-[700] text-[15px] md:text-[18px] lg:text-[18px] text-[#15803D] border-0 rounded-3xl shadow-[#cff0dc] hover-plant inter mt-[24px] text-center" href="#volunteer"><span
           class="text-[27px]">&#127801;</span>Get Involved</a>
     </div>
     <div class="hidden lg:flex">
@@ -97,6 +98,9 @@
           </div>
         </div>
         <!--Middle part[Card Section]-->
+        <div id="spinner"  class="grid grid-cols-1 min-[740px]:grid-cols-2 lg:grid-cols-3 gap-[7px] sm:gap-[10px] lg:gap-[30px]">
+        <span class="loading loading-dots loading-xl"></span>
+        </div>
         <div class="grid grid-cols-1 min-[740px]:grid-cols-2 lg:grid-cols-3 gap-[7px] sm:gap-[10px] lg:gap-[30px]"
           id="cardContainer">
 
@@ -128,7 +132,7 @@
     <!--About Section-->
 
     <div
-      class="flex flex-col gap-[40px] mx-[10px] sm:mx-[12px] md:mx-auto lg:mx-auto items-center lg:max-h-[610px] bg-[#DCFCE7] my-[100px] md:my-[60px] lg:my-[100px]">
+      class="flex flex-col gap-[40px] mx-[10px] sm:mx-[12px] md:mx-auto lg:mx-auto items-center lg:max-h-[610px] bg-[#DCFCE7] my-[100px] md:my-[60px] lg:my-[100px]" id="abouta">
       <h1 class="text-[32px] font-[600] leading-[40px]">About the Campaign</h1>
       <div class="flex flex-col md:flex-row justify-between items-center gap-[30px] mx-auto">
         <div>
@@ -150,7 +154,7 @@
     </div>
   </div>
 
-  <div class="bg-[#cff0dc] py-[20px] px-[20px] md:py-[40px] lg:py-[100px] md:px-[50px] lg:px-[135px]">
+  <div class="bg-[#cff0dc] py-[20px] px-[20px] md:py-[40px] lg:py-[100px] md:px-[50px] lg:px-[135px]" id="volunteer">
     <div class="flex flex-col gap-[20px] md:gap-[40px]">
       <h1 class="text-[40px] font-[700] leading-[32px] text-center">Our Impact</h1>
       <div class="flex flex-col lg:flex-row justify-between gap-[30px] mx-0 md:mx-[135px]">
@@ -191,7 +195,7 @@
       </div>
     </div>
   </div>
-  <footer class="bg-[#14532d] text-[20px] font-[500] text-center text-white py-[20px] lg:py-[25px]">
+  <footer class="bg-[#14532d] text-[20px] font-[500] text-center text-white py-[20px] lg:py-[25px]" id="bottoma">
     © 2025 Green Earth. All Rights Reserved.
   </footer>
   <!--Modal Part-->
@@ -200,7 +204,6 @@
   <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
     <div class="modal-box">
       <div id="modal-container">
-
       </div>
       <div class="modal-action">
         <form method="dialog">

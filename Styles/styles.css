@@ -92,3 +92,12 @@ grid-template-columns: repeat(2, 1fr);
 gap: 5px;
 padding:inherit;
 }
+.hidden{
+  display:hidden;
+}
+.block{
+  display: block;
+}
+*{
+  scroll-behavior: smooth;
+}

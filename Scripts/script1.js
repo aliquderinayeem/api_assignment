@@ -1,3 +1,17 @@
+let status=true;
+//Spinner part
+const spContainer=document.getElementById("spinner");
+spContainer.classList.add("hidden")
+const spinner=(bool)=>{
+  if(bool===true){
+    spContainer.className="";
+    spContainer.classList.add("hidden");
+  }else{
+    spContainer.className="";
+    spContainer.classList.add("block");
+  }
+}
+
 //First the left nav part
 const loadLeftNav = () => {
     fetch('https://openapi.programming-hero.com/api/categories')
@@ -19,25 +33,19 @@ displayNavLeft = (categories) => {
 };
 //Load All data
 const loadAllData=()=>{
+spinner(false);
 const url='https://openapi.programming-hero.com/api/plants';
 fetch(url)
 .then(res=>res.json())
 .then(data=>{
     displayCards(data.plants);
+    spinner(data.status);
 })
 };
 
-// "id": 1,
-// "image": "https://i.ibb.co.com/cSQdg7tf/mango-min.jpg",
-// "name": "Mango Tree",
-// "description": "A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green canopy offers shade, while its sweet fruits are rich in vitamins and minerals.",
-// "category": "Fruit Tree",
-// "price": 500
 const displayCards=(plants)=>{
     const container=document.getElementById("cardContainer");
-    // container.innerHTML=``;
     plants.forEach(plant=>{
-        // console.log(plant);
     let child=document.createElement("div")
     child.innerHTML=`
     <div class="p-[12px] sm:p-[14px] lg:p-[16px] rounded-[8px] sm:rounded-[10px] bg-white">
@@ -60,6 +68,7 @@ const displayCards=(plants)=>{
     })
 };
 const displayHover= (id) => {
+    spinner(false);
     //Removal Part
     const removal = document.querySelectorAll(".navClass");
     removal.forEach(el => el.classList.remove("clickedNav"));
@@ -74,7 +83,7 @@ const displayHover= (id) => {
     const individual=()=>{
     fetch(url)
     .then(res=>res.json())
-    .then(data=>displayIndividual(data.plants))
+    .then(data=>{displayIndividual(data.plants);spinner(data.status)})
     }
     const displayIndividual=(data)=>{
         data.forEach(d=>{
@@ -133,7 +142,7 @@ const gallery=()=>{
   const f=()=>{
     fetch('https://openapi.programming-hero.com/api/plants')
     .then(res=>res.json())
-    .then(data=>displaygallery(data.plants))
+    .then(data=>{displaygallery(data.plants)})
     const containerNew=document.getElementById('modal-container');
     containerNew.innerHTML="";
     containerNew.className="";
@@ -225,7 +234,6 @@ const deleted=(button,price)=>{
   total-=price;
   totalMoney.innerText=total.toString();
 }
-
 
 
 
