@@ -38,7 +38,8 @@
         <ul tabindex="0"
           class="menu menu-sm dropdown-content bg-green-600 rounded-box z-1 mt-[15px] w-48 p-2 text-white">
           <li><a href="" class="font-[500] hover-drop inter">About</a></li>
-          <li><button class="font-[500] hover-drop inter" onclick="console.log('hello')">Gallery</button></li>
+          <li><button class="font-[500] hover-drop inter" onclick="gallery();my_modal_5.showModal()">Gallery</button>
+          </li>
           <li><a href="" class="font-[500] hover-drop inter">Plant a Tree</a></li>
         </ul>
       </div>
@@ -47,7 +48,7 @@
     <div class="navbar-center hidden lg:flex text-white">
       <ul class="menu menu-horizontal px-1 md:text-[16px] lg:text-[18px]">
         <li><a href="" class="font-[500] hover-nav inter">About</a></li>
-        <li><a href="" class="font-[500] hover-nav inter">Gallery</a></li>
+        <li><button class="font-[500] hover-nav inter" onclick="gallery();my_modal_5.showModal()">Gallery</button></li>
         <li><a href="" class="font-[500] hover-nav inter">Plant a Tree</a></li>
       </ul>
     </div>
@@ -149,27 +150,50 @@
     </div>
   </div>
 
-  <div class="bg-[#cff0dc] border-1 md:py-[40px] lg:py-[100px] md:px-[60px] lg:px-[135px]">
-    <div class="flex flex-col border-1 gap-[40px]">
-      <h1 class="text-[32px] font-[600] leading-[40px] text-center border-1">Our Impact</h1>
-      <div class="flex flex-col lg:flex-row justify-between gap-[50px] border-1 mx-[135px]">
-        <div class="flex-1 border-1 border-red-600 p-[40px] bg-white rounded-lg gap-[15px] flex flex-col">
+  <div class="bg-[#cff0dc] py-[20px] px-[20px] md:py-[40px] lg:py-[100px] md:px-[50px] lg:px-[135px]">
+    <div class="flex flex-col gap-[20px] md:gap-[40px]">
+      <h1 class="text-[40px] font-[700] leading-[32px] text-center">Our Impact</h1>
+      <div class="flex flex-col lg:flex-row justify-between gap-[30px] mx-0 md:mx-[135px]">
+        <div class="flex-1 p-[20px] md:p-[40px] bg-white rounded-lg gap-[10px] md:gap-[15px] flex flex-col">
           <div class="card-heading">500K+</div>
           <div class="card-des">Trees Planted</div>
         </div>
-        <div class="flex-1 border-1 border-red-600 p-[40px] bg-white rounded-lg gap-[15px] flex flex-col">
-        <div class="card-heading">120+</div>
-        <div class="card-des">Communities Involved</div>
+        <div class="flex-1 p-[20px] md:p-[40px] bg-white rounded-lg gap-[10px] md:gap-[15px] flex flex-col">
+          <div class="card-heading">120+</div>
+          <div class="card-des">Communities Involved</div>
         </div>
-        <div class="flex-1 border-1 border-red-600 p-[40px] bg-white rounded-lg gap-[15px] flex flex-col">
-        <div class="card-heading">30+</div>
-        <div class="card-des">Countries Reached</div>
+        <div class="flex-1 p-[20px] md:p-[40px] bg-white rounded-lg gap-[10px] md:gap-[15px] flex flex-col">
+          <div class="card-heading">30+</div>
+          <div class="card-des">Countries Reached</div>
         </div>
       </div>
     </div>
   </div>
-  </div>
 
+
+  <!--Form section-->
+
+  <div class="bg-[#166534] py-[40px] lg:py-[100px]">
+    <div class="flex flex-col gap-[40px]">
+      <h1 class="text-[32px] font-[700] leading-[40px] text-center text-white">Plant a Tree Today</h1>
+      <div class="flex flex-col bg-[#15803D] p-[40px] mx-auto items-center max-w-[650px] w-full gap-[12px] rounded-[15px]">
+        <input type="text" placeholder="Your Name" class="text-[18px] font-[500] input input-neutral w-full h-[50px] p-[12px]"/>
+        <input type="text" placeholder="Your Email Address" class="text-[18px] font-[500] input input-neutral w-full h-[50px] p-[12px]"/>
+        <input type="text" class="text-[18px] font-[500] input w-full h-[50px] p-[12px]" placeholder="Number of Trees" list="browsers"/>
+        <datalist id="browsers">
+          <option value="One"></option>
+          <option value="Two"></option>
+          <option value="Three"></option>
+          <option value="Four"></option>
+          <option value="Five"></option>
+        </datalist>
+        <button class="w-full min-h-[48px] text-[21px] font-[700] flex justify-center items-center bg-[#facc15] text-[#15803d] rounded-[9999px] leading-none hover cart">Donate Now</button>
+      </div>
+    </div>
+  </div>
+  <footer class="bg-[#14532d] text-[20px] font-[500] text-center text-white py-[20px] lg:py-[25px]">
+    © 2025 Green Earth. All Rights Reserved.
+  </footer>
   <!--Modal Part-->
   <!-- Open the modal using ID.showModal() method -->
 

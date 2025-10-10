@@ -47,7 +47,7 @@ const displayCards=(plants)=>{
       <h1 onclick="my_modal_5.showModal();details('${plant.image}','${plant.name}','${plant.description}','${plant.category}','${plant.price}')" class="text-[14px] sm:text-[15px] lg:text-[16px] font-[600] leading-[18px] sm:leading-[19px] lg:leading-[20px] mt-[10px] sm:mt-[12px]">${plant.name}</h1>
       <p class="text-[11px] sm:text-[12px] font-[400] leading-[15px] sm:leading-[16px] line-clamp-2 inter mt-[6px] sm:mt-[8px]">${plant.description}</p>
       <div class="flex flex-row justify-between mt-[6px] sm:mt-[8px] items-center">
-        <div class="px-[10px] sm:px-[12px] py-[3px] sm:py-[4px] rounded-full font-[600] text-[12px] sm:text-[14px] lg:text-[15px] bg-[#DCFCE7] text-[#15803D]">${plant.category}</div>
+        <div class="geist px-[10px] sm:px-[12px] py-[3px] sm:py-[4px] rounded-full font-[600] text-[12px] sm:text-[14px] lg:text-[15px] bg-[#DCFCE7] text-[#15803D]">${plant.category}</div>
         <div class="text-[14px] sm:text-[15px] lg:text-[16px] font-[700] leading-[18px] sm:leading-[19px] lg:leading-[20px]"><i class="fa-solid fa-dollar-sign"></i>${plant.price}</div>
       </div>
       <div class="mt-[10px] sm:mt-[12px]">
@@ -87,7 +87,7 @@ const displayHover= (id) => {
       <h1 onclick="my_modal_5.showModal();details('${d.image}','${d.name}','${d.description}','${d.category}','${d.price}')" class="text-[14px] sm:text-[15px] lg:text-[16px] font-[600] leading-[18px] sm:leading-[19px] lg:leading-[20px] mt-[10px] sm:mt-[12px]">${d.name}</h1>
       <p class="text-[11px] sm:text-[12px] font-[400] leading-[15px] sm:leading-[16px] line-clamp-2 inter mt-[6px] sm:mt-[8px]">${d.description}</p>
       <div class="flex flex-row justify-between mt-[6px] sm:mt-[8px] items-center">
-        <div class="px-[10px] sm:px-[12px] py-[3px] sm:py-[4px] rounded-full font-[600] text-[12px] sm:text-[14px] lg:text-[15px] bg-[#DCFCE7] text-[#15803D]">${d.category}</div>
+        <div class="geist px-[10px] sm:px-[12px] py-[3px] sm:py-[4px] rounded-full font-[600] text-[12px] sm:text-[14px] lg:text-[15px] bg-[#DCFCE7] text-[#15803D]">${d.category}</div>
         <div class="text-[14px] sm:text-[15px] lg:text-[16px] font-[700] leading-[18px] sm:leading-[19px] lg:leading-[20px]"><i class="fa-solid fa-dollar-sign"></i>${d.price}</div>
       </div>
       <div class="mt-[10px] sm:mt-[12px]">
@@ -134,11 +134,21 @@ container.append(child)
 };
 
 const gallery=()=>{
-  console.log("clicked");
   const f=()=>{
     fetch('https://openapi.programming-hero.com/api/plants')
     .then(res=>res.json())
-    .then(data=>console.log(data))
+    .then(data=>displaygallery(data.plants))
+    const containerNew=document.getElementById('modal-container');
+    containerNew.innerHTML="";
+    containerNew.className="";
+    containerNew.classList.add("co");
+    const displaygallery=(plants)=>{
+      plants.forEach(plant=>{
+        const elNew=document.createElement("div");
+        elNew.innerHTML=`<img src="${plant.image}" class="max-w-[210px] max-h-[117px] rounded-lg w-full h-full object-cover">`;
+        containerNew.append(elNew);
+      })
+    };
   };
   f();
 }
