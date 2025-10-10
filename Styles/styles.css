@@ -69,3 +69,19 @@
 .none{
   display:none;
 }
+.card-heading{
+color:rgba(21, 128, 61, 1);
+font-size: 50px;
+font-weight: 600;
+line-height: 40px;
+letter-spacing: 0%;
+text-align: center;
+}
+.card-des{
+  color:rgba(31, 41, 55, 1);
+font-size: 25px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0%;
+text-align: center;
+}

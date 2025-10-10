@@ -42,7 +42,7 @@ const displayCards=(plants)=>{
     child.innerHTML=`
     <div class="p-[12px] sm:p-[14px] lg:p-[16px] rounded-[8px] sm:rounded-[10px] bg-white">
       <div>
-        <img src="${plant.image}" alt="${plant.name}" class="rounded-[8px] sm:rounded-[10px] max-h-[220px] max-w-[390px] md:max-w-[176.031px] md:max-h-[117.344px] lg:max-w-[366.328px] lg:max-h-[244.219px] w-full h-full object-cover">
+        <img src="${plant.image}" alt="${plant.name}" class="min-[2900px]:max-w-[710px] rounded-[8px] sm:rounded-[10px] max-h-[220px] max-w-[390px] md:max-w-[176.031px] md:max-h-[117.344px] lg:max-w-[366.328px] lg:max-h-[244.219px] w-full h-full object-cover">
       </div>
       <h1 onclick="my_modal_5.showModal();details('${plant.image}','${plant.name}','${plant.description}','${plant.category}','${plant.price}')" class="text-[14px] sm:text-[15px] lg:text-[16px] font-[600] leading-[18px] sm:leading-[19px] lg:leading-[20px] mt-[10px] sm:mt-[12px]">${plant.name}</h1>
       <p class="text-[11px] sm:text-[12px] font-[400] leading-[15px] sm:leading-[16px] line-clamp-2 inter mt-[6px] sm:mt-[8px]">${plant.description}</p>
@@ -82,7 +82,7 @@ const displayHover= (id) => {
             child.innerHTML=`
                 <div class="p-[12px] sm:p-[14px] lg:p-[16px] rounded-[8px] sm:rounded-[10px] bg-white">
       <div>
-        <img src="${d.image}" alt="${d.name}" class="rounded-[8px] sm:rounded-[10px] max-h-[220px] max-w-[390px] md:max-w-[176.031px] md:max-h-[117.344px] lg:max-w-[366.328px] lg:max-h-[244.219px] w-full h-full object-cover">
+        <img src="${d.image}" alt="${d.name}" class="rounded-[8px] sm:rounded-[10px] max-h-[220px] max-w-[390px] md:max-w-[176.031px] md:max-h-[117.344px] lg:max-w-[366.328px] lg:max-h-[244.219px] min-[2900px]:min-w-[710px] w-full h-full object-cover">
       </div>
       <h1 onclick="my_modal_5.showModal();details('${d.image}','${d.name}','${d.description}','${d.category}','${d.price}')" class="text-[14px] sm:text-[15px] lg:text-[16px] font-[600] leading-[18px] sm:leading-[19px] lg:leading-[20px] mt-[10px] sm:mt-[12px]">${d.name}</h1>
       <p class="text-[11px] sm:text-[12px] font-[400] leading-[15px] sm:leading-[16px] line-clamp-2 inter mt-[6px] sm:mt-[8px]">${d.description}</p>
@@ -133,7 +133,15 @@ child.innerHTML=`
 container.append(child)
 };
 
-
+const gallery=()=>{
+  console.log("clicked");
+  const f=()=>{
+    fetch('https://openapi.programming-hero.com/api/plants')
+    .then(res=>res.json())
+    .then(data=>console.log(data))
+  };
+  f();
+}
 
 
 
