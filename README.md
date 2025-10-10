@@ -34,4 +34,14 @@ const funcName=(parameters_list)=>{
 
 4) How does destructuring assignment work in ES6?
 =>
-Let I have an object and the object has some attributes.If I write any attributes name in the left side of object declaration then 
+Let I have an object or array and the object has some attributes.If I write any attribute's name on the left side of object declaration then a variable will be created automatically of the same name as the attribute and contain value of the attribute.
+
+5) Explain template literals in ES6. How are they different from string concatenation?
+=>
+Template literals are written inside  `` .
+They help a lot to write dynamic text or any dynamic object.They also help to write as the same way as expected in output.
+For example:
+console.log("Hello\nI am Boss")
+If we use `` then
+console.log(`Hello
+I am Boss`)
